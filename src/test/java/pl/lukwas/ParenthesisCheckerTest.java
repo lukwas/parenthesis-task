@@ -28,8 +28,9 @@ class ParenthesisCheckerTest {
         return Stream.of(
                 Arguments.arguments(""),
                 Arguments.arguments("()"),
+                Arguments.arguments("(){}[]"),
+                Arguments.arguments("([{}])"),
                 Arguments.arguments("(((())))"),
-                Arguments.arguments("({[]})"),
                 Arguments.arguments("({[][]{([])}})"),
                 Arguments.arguments("({[]}){}()()()()")
                 );
@@ -41,6 +42,8 @@ class ParenthesisCheckerTest {
                 Arguments.arguments("["),
                 Arguments.arguments("]"),
                 Arguments.arguments("([)]"),
+                Arguments.arguments("(({}]()"),
+                Arguments.arguments("[({})](]"),
                 Arguments.arguments("{{{{{}}}}}}"),
                 Arguments.arguments("{{{{{}}}}}}")
         );
